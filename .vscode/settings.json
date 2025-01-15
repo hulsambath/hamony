@@ -1,5 +1,5 @@
 {
-  "dart.flutterSdkPath": ".fvm/versions/3.24.4",
+  "dart.flutterSdkPath": "~/fvm/versions/3.24.4",
   "dart.lineLength": 120,
   "editor.formatOnSave": true,
   "editor.rulers": [120],
@@ -7,6 +7,16 @@
   "editor.indentSize": 2,
   "editor.detectIndentation": false,
   "xml.format.maxLineWidth": 120,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
   "[xml]": {
     "editor.indentSize": 4,
     "editor.defaultFormatter": "redhat.vscode-xml"
