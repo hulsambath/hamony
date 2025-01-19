@@ -1,0 +1,51 @@
+name: Harmony-App
+
+on: [pull_request]
+jobs:
+  execute:
+    name: Code Quality
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        flutter_version: [3.24.4]
+        flutter_path: ["/opt/hostedtoolcache/flutter"]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Load Flutter SDK from Cache
+        uses: actions/cache@v3.2.6
+        with:
+          path: ${{ matrix.flutter_path }}
+          key: ${{ runner.os }}-flutter-${{ matrix.flutter_version }}
+
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v2.8.0
+        with:
+          flutter-version: ${{ matrix.flutter_version }}
+
+      - name: Install Packages
+        run: |
+          (flutter pub get)
+        shell: bash
+
+      - name: Check Code Formats
+        run: |
+          dart format $(find lib -name "*.dart" -not \( -name "*.g.dart" -o -name "*.gr.dart" \)) --set-exit-if-changed --line-length 120
+        shell: bash
+
+      - name: Check Linters
+        run: |
+          (dart analyze lib)
+        shell: bash
+
+      # ignore app_router build for now, as it inconsistently generate file.
+      - name: Execute Build Runner
+        run: |
+          dart run build_runner build -d
+        shell: bash
+
+      - name: Execute Tests
+        run: |
+          (flutter test)

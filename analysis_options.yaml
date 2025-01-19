@@ -7,10 +7,6 @@
 
 include: package:flutter_lints/flutter.yaml
 
-analyzer:
-  enable-experiment:
-    - macros
-
 linter:
   rules:
     avoid_print: true # Uncomment to disable the `avoid_print` rule
