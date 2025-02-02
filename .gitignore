@@ -45,3 +45,8 @@ app.*.map.json
 # FVM Version Cache
 .fvm/
 .fvmrc
+
+# ignore dart define file
+/configs/*Stg.json
+/configs/*Dev.json
+/configs/*Prod.json
