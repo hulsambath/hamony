@@ -44,8 +44,12 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: SizedBox.square(
-        child: Image.asset(Assets.sambath.staging.harmonyIcon.path),
+      body: Column(
+        children: [
+          SizedBox.square(
+            child: Image.asset(Assets.sambath.staging.icons.icon.path),
+          ),
+        ],
       ),
     );
   }
