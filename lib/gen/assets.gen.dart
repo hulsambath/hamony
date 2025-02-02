@@ -19,14 +19,21 @@ class $AssetsSambathGen {
 class $AssetsSambathStagingGen {
   const $AssetsSambathStagingGen();
 
-  /// File path: assets/sambath/staging/harmony_icon.png
-  AssetGenImage get harmonyIcon => const AssetGenImage(
-        'assets/sambath/staging/harmony_icon.png',
+  /// Directory path: assets/sambath/staging/icons
+  $AssetsSambathStagingIconsGen get icons => const $AssetsSambathStagingIconsGen();
+}
+
+class $AssetsSambathStagingIconsGen {
+  const $AssetsSambathStagingIconsGen();
+
+  /// File path: assets/sambath/staging/icons/icon.png
+  AssetGenImage get icon => const AssetGenImage(
+        'assets/sambath/staging/icons/icon.png',
         flavors: {'sambathStg'},
       );
 
   /// List of all assets
-  List<AssetGenImage> get values => [harmonyIcon];
+  List<AssetGenImage> get values => [icon];
 }
 
 class Assets {
