@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:harmony/gen/assets.gen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SizedBox.square(
-        child: Image.asset('assets/sambath/staging/harmony_icon.png'),
+        child: Image.asset(Assets.sambath.staging.harmonyIcon.path),
       ),
     );
   }
